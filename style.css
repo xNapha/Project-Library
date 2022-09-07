@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,500&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -18,20 +20,212 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+:root{
+    --default-font-size: 35px;
+    --inner-shelf-colour: rgba(195, 152, 28, 1);
+    --shelf-border-colour:rgba(232, 183, 44, 1);
+    font-family: 'Alegreya', serif;
+}
+#background{
+    background: linear-gradient(#16213E, #0F3460, #533483, #E94560);
+    position: fixed;
+    background-repeat: no-repeat;
+    width: 100%; 
+    height: 100%;
+}
+body{
+    font-size: var(--default-font-size);
+}
+#mainContainer{
+    scale: .99;
+}
 header{
-    border: 1px solid black;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
+    background-color: var(--shelf-border-colour);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 .shelves{
-    border:1px solid black
+    border-right:20px solid var(--shelf-border-colour);
+    border-left:20px solid var(--shelf-border-colour);
+    border-bottom:15px solid var(--shelf-border-colour);
+    border-top: 0px;
+    background-color: var(--inner-shelf-colour);
 }
-#popUpForm{
-    border: 1px solid black;
+#popUpForm,
+#shelfNameForm{
+    display:flex;
+    justify-content: center;
 }
-.toggleFormOff{
-    display: none;
-}
-.toggleFormOn{
+.exitArea{
     display: block;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.3); 
+    backdrop-filter: blur(2px);
+    z-index: 2;
+}
+#addBookFormCon{
+    background-color: rgba(255,255,255,1);
+    font-size: var(--default-font-size);
+    position: fixed;
+    height: 21.3rem;
+    width: 30rem;
+    border-radius: 20px;
+    top: 35%; 
+    z-index:3;
+}
+#addBookForm{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top:7px;
+}
+#formH1{
+    font-size: var(--default-font-size);
+    display: block;
+    margin: auto;
+}
+#titleDiv,
+#authorDiv{
+    display: flex;
+    flex-direction: column;
+}
+#titleLabel,
+#authorLabel{
+    position: relative;
+    left: 37px;
+}
+#titleInput,
+#authorInput{
+    display: block;
+    width: 25rem;
+    margin: auto;
+    font-size: 15px;
+}
+.radioDiv{
+    position: relative;
+    left: 30px;
+}
+#addBook{
+    width: 10rem;
+    height: 2rem;
+    display:block;
+    margin: auto;
+    position: relative;
+    top: 10px;
+}
+.renameFormCon{
+    background-color: var(--inner-shelf-colour);
+    position: fixed;
+    height: 6rem;
+    width: 20rem;
+    top: 35%;
+    border-radius: 20px;
+    z-index:3;
+}
+.renameForm{
+    display: block;
+    text-align: center;
+}
+.renameForm > input,
+.renameForm > button{
+    height: 2rem;
+    position:relative;
+    top: -7px;
+    border-radius: 5px;
+    border:0px;
+    filter: brightness(80%);
+    background-color: var(--inner-shelf-colour);
+    font-size: 20px;
+}
+.renameForm > input{
+    width: 13rem;
+    left: -6px;
+}
+.renameForm > button{
+    left:5px;
+}
+.shelfHeaderCon{
+    display: flex;
+    gap: 5px;
+}
+
+.removeButton,
+.renameButton{
+    filter:brightness(95%);
+    font-size: 15px;
+    background-color: var(--inner-shelf-colour);
+    border: 0px;
+    border-radius: 2px;
+}
+.removeButton{
+
+    width: 50px;
+    font-size: 30px;
+}
+.books{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    flex: 0 0 5rem;
+    height: 10rem;
+    font-size: 20px;
+    justify-content: space-between;
+    background-color: #533483;    
+}
+.books:hover{
+    filter:brightness(80%);
+    cursor: pointer;
+}
+.seriesButtonCon{
+    display: flex;
+    flex-direction: row;
+    height: 10rem;
+}
+.seriesCon{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10.6rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;   
+}
+.bookAuthors{
+    font-size: 15px;
+}
+.bookReadStatus{
+    font-size: 12px;
+}
+.addButton{
+    border: 1px solid black;
+    background-color: var(--inner-shelf-colour);
+    filter: brightness(80%);
+    font-size: 30px;
+    width: 5rem;
+}
+#addNewShelf{
+    width: 100%;
+    height: 5rem;
+    font-size: 30px;
+    background-color: rgba(156, 122, 21, 1);
+    border-bottom: 0px;
+    border-left: 20px solid var(--shelf-border-colour);
+    border-right: 20px solid var(--shelf-border-colour);
+    border-top:0px;
+}
+#addBook:hover,
+.removeButton:hover,
+.renameButton:hover,
+.renameForm > input:focus,
+.renameForm > input:hover,
+.renameForm > button:hover,
+.addButton:hover,
+#addNewShelf:hover{
+    filter:brightness(60%);
+    cursor: pointer;
 }

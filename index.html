@@ -9,27 +9,24 @@
     <script src="library.js" defer></script>
 </head>
 <body>
+    <div id="background"></div>
+    <div id="popUpForm"></div>
+    <div id="shelfNameForm" onkeypress="return event.keyCode != 13"></div>
     <div id="mainContainer">
         <header>
             <div id="logoCon">
                 <div id="logo">Library</div>
             </div>
             <div id="searchCon">
-                <input type="text" placeholder="Search for a book..." id="searchBar">
             </div>
             <div id="accountCon">
-                <div>User</div>
+                <div></div>
             </div>
         </header>
-        <div id="popUpForm">
-        </div>
-        <div id="shelfNameForm" onkeypress="return event.keyCode != 13">
-        </div>
+        
         <div id="bookcase">
-            <div id="content">
-            
-            </div>
-            <button type="button" id="addNewShelf">New Shelf</button>
+            <div id="content"></div>
+            <button type="button" id="addNewShelf">+</button>
         </div>
         <footer></footer>
     </div>
